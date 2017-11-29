@@ -1,63 +1,63 @@
 **Prerrequisitos de instalación**
   
-sudo lsblk  
-sudo parted /dev/xvdb mklabel gpt  
-sudo parted /dev/xvdc mklabel gpt  
-sudo parted -a opt /dev/xvdb mkpart primary ext4 0% 100%  
-sudo parted -a opt /dev/xvdc mkpart primary ext4 0% 100%  
-sudo mkfs.ext4 -L datapartition /dev/xvdb1  
-sudo mkfs.ext4 -L datapartition /dev/sxvdc1  
-vi /etc/fstab  
+<code>sudo lsblk</code></code>  
+<code>sudo parted /dev/xvdb mklabel gpt</code>  
+<code>sudo parted /dev/xvdc mklabel gpt</code>  
+<code>sudo parted -a opt /dev/xvdb mkpart primary ext4 0% 100%</code>  
+<code>sudo parted -a opt /dev/xvdc mkpart primary ext4 0% 100%</code>  
+<code>sudo mkfs.ext4 -L datapartition /dev/xvdb1</code>  
+<code>sudo mkfs.ext4 -L datapartition /dev/sxvdc1</code>  
+<code>vi /etc/fstab</code>  
   
 /dev/xvdb1 /data00 ext4 defaults,noatime 1 2
 /dev/xvdc1 /data01 ext4 defaults,noatime 1 2
+
+![fstab](https://github.com/AlanEsquivel42/SEBC/blob/master/storage/labs/teragen2.PNG)  
   
-sudo mkdir -p /data00  
-sudo mkdir -p /data01  
-sudo mount -o defaults /dev/xvdb1 /data00  
-sudo mount -o defaults /dev/xvdc1 /data01  
-sudo lsblk  
+<code>sudo mkdir -p /data00</code>  
+<code>sudo mkdir -p /data01</code>  
+<code>sudo mount -o defaults /dev/xvdb1 /data00</code>  
+<code>sudo mount -o defaults /dev/xvdc1 /data01</code>  
+<code>sudo lsblk</code>  
   
-sudo su  
-echo "vm.swappiness = 1" >> /etc/sysctl.conf  
-echo 1 > /proc/sys/vm/swappiness  
+<code>sudo su</code>  
+<code>echo "vm.swappiness = 1" >> /etc/sysctl.conf</code>  
+<code>echo 1 > /proc/sys/vm/swappiness</code>  
   
-yum install y ntp  
-systemctl enable ntpd  
-systemctl start ntpd  
-ntpq -p  
+<code>yum install y ntp</code>  
+<code>systemctl enable ntpd</code>  
+<code>systemctl start ntpd</code>  
   
-systemctl status firewalld.service  
-systemctl stop firewalld.service  
-systemctl disable firewalld.service  
+<code>systemctl status firewalld.service</code>  
+<code>systemctl stop firewalld.service</code>  
+<code>systemctl disable firewalld.service</code>  
   
-selinuxenabled || echo "disabled"  
-reboot  
-sestatus  
+<code>selinuxenabled || echo "disabled"</code>  
+<code>reboot</code>  
+<code>sestatus</code>  
+
+![fstab](https://github.com/AlanEsquivel42/SEBC/blob/master/storage/labs/teragen2.PNG)  
   
-vi /etc/rc.local  
+<code>vi /etc/rc.local  
 echo never > /sys/kernel/mm/transparent_hugepage/defrag  
 echo never > /sys/kernel/mm/transparent_hugepage/enabled  
-sudo chmod a+x /etc/rc.d/rc.local && sudo /etc/rc.d/rc.local  
+    
+![fstab](https://github.com/AlanEsquivel42/SEBC/blob/master/storage/labs/teragen2.PNG)  
   
-yum install -y wget  
-wget http://archive.cloudera.com/cm5/redhat/7/x86_64/cm/5.10.2/RPMS/x86_64/oracle-j2sdk1.7-1.7.0+update67-1.x86_64.rpm  
-rpm -ivh oracle-j2sdk1.7-1.7.0+update67-1.x86_64.rpm  
+<code>sudo chmod a+x /etc/rc.d/rc.local && sudo /etc/rc.d/rc.local</code>  
   
-vi /etc/hosts  
+<code>yum install -y wget</code>  
+</code>wget http://archive.cloudera.com/cm5/redhat/7/x86_64/cm/5.10.2/RPMS/x86_64/oracle-j2sdk1.7-1.7.0+update67-1.x86_64.rpm</code>  
+<code>rpm -ivh oracle-j2sdk1.7-1.7.0+update67-1.x86_64.rpm</code>  
   
-172.31.20.9 ip-172-31-20-9.ec2.internal nodo1  
-172.31.6.221 ip-172-31-6-221.ec2.internal nodo2  
-172.31.9.209 ip-172-31-9-209.ec2.internal nodo3  
-172.31.8.216 ip-172-31-8-216.ec2.internal nodo4  
+<code>vi /etc/hosts</code>  
   
-vi /etc/sysctl.conf  
+![fstab](https://github.com/AlanEsquivel42/SEBC/blob/master/storage/labs/teragen2.PNG)  
   
-#disable ipv6  
-net.ipv6.conf.all.disable_ipv6 = 1  
-net.ipv6.conf.default.disable_ipv6 = 1  
-net.ipv6.conf.lo.disable_ipv6 = 1  
+<code>vi /etc/sysctl.conf</code>  
   
-sysctl -p  
+![fstab](https://github.com/AlanEsquivel42/SEBC/blob/master/storage/labs/teragen2.PNG)    
+  
+<code>sysctl -p</code>  
   
   
