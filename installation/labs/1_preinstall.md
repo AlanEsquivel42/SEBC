@@ -9,10 +9,10 @@
 <code>sudo mkfs.ext4 -L datapartition /dev/sxvdc1</code>  
 <code>vi /etc/fstab</code>  
   
-/dev/xvdb1 /data00 ext4 defaults,noatime 1 2
-/dev/xvdc1 /data01 ext4 defaults,noatime 1 2
+/dev/xvdb1 /data00 ext4 defaults,noatime 1 2  
+/dev/xvdc1 /data01 ext4 defaults,noatime 1 2  
 
-![fstab](https://github.com/AlanEsquivel42/SEBC/blob/master/storage/labs/teragen2.PNG)  
+![fstab](https://github.com/AlanEsquivel42/SEBC/blob/master/installation/labs/fstab.PNG)  
   
 <code>sudo mkdir -p /data00</code>  
 <code>sudo mkdir -p /data01</code>  
@@ -36,27 +36,27 @@
 <code>reboot</code>  
 <code>sestatus</code>  
 
-![fstab](https://github.com/AlanEsquivel42/SEBC/blob/master/storage/labs/teragen2.PNG)  
+![sestatus](https://github.com/AlanEsquivel42/SEBC/blob/master/installation/labs/sestatus.PNG)  
   
 <code>vi /etc/rc.local  
 echo never > /sys/kernel/mm/transparent_hugepage/defrag  
 echo never > /sys/kernel/mm/transparent_hugepage/enabled  
     
-![fstab](https://github.com/AlanEsquivel42/SEBC/blob/master/storage/labs/teragen2.PNG)  
+![rclocal](https://github.com/AlanEsquivel42/SEBC/blob/master/installation/labs/rclocal.PNG)  
   
 <code>sudo chmod a+x /etc/rc.d/rc.local && sudo /etc/rc.d/rc.local</code>  
   
 <code>yum install -y wget</code>  
-</code>wget http://archive.cloudera.com/cm5/redhat/7/x86_64/cm/5.10.2/RPMS/x86_64/oracle-j2sdk1.7-1.7.0+update67-1.x86_64.rpm</code>  
+<code>wget http://archive.cloudera.com/cm5/redhat/7/x86_64/cm/5.10.2/RPMS/x86_64/oracle-j2sdk1.7-1.7.0+update67-1.x86_64.rpm</code>  
 <code>rpm -ivh oracle-j2sdk1.7-1.7.0+update67-1.x86_64.rpm</code>  
   
 <code>vi /etc/hosts</code>  
   
-![fstab](https://github.com/AlanEsquivel42/SEBC/blob/master/storage/labs/teragen2.PNG)  
+![hosts](https://github.com/AlanEsquivel42/SEBC/blob/master/installation/labs/etchosts.PNG)  
   
 <code>vi /etc/sysctl.conf</code>  
   
-![fstab](https://github.com/AlanEsquivel42/SEBC/blob/master/storage/labs/teragen2.PNG)    
+![sysctl](https://github.com/AlanEsquivel42/SEBC/blob/master/installation/labs/sysctlconf.PNG)      
   
 <code>sysctl -p</code>  
   
