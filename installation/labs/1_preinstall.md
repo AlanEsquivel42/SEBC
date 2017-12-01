@@ -28,7 +28,7 @@
 ![swap](https://github.com/AlanEsquivel42/SEBC/blob/master/installation/labs/swap.PNG)  
   
 <code>yum install y ntp</code>  
-<code>systemctl enable ntpd</code>  
+<code>systemctl enable ntpd</code>    
 <code>systemctl start ntpd</code>  
   
 <code>systemctl status firewalld.service</code>  
@@ -41,10 +41,10 @@
   
 ![sestatus](https://github.com/AlanEsquivel42/SEBC/blob/master/installation/labs/sestatus.PNG)  
   
-<code>vi /etc/rc.local  
+<code>vi /etc/rc.local</code>  
 echo never > /sys/kernel/mm/transparent_hugepage/defrag  
 echo never > /sys/kernel/mm/transparent_hugepage/enabled  
-    
+  
 ![rclocal](https://github.com/AlanEsquivel42/SEBC/blob/master/installation/labs/rclocal.PNG)  
   
 <code>sudo chmod a+x /etc/rc.d/rc.local && sudo /etc/rc.d/rc.local</code>  
