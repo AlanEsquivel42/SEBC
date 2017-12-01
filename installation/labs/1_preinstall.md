@@ -27,9 +27,11 @@
   
 ![swap](https://github.com/AlanEsquivel42/SEBC/blob/master/installation/labs/swap.PNG)  
   
-<code>yum install y ntp</code>  
+<code>yum install -y ntp</code>  
 <code>systemctl enable ntpd</code>    
 <code>systemctl start ntpd</code>  
+  
+![ntp](https://github.com/AlanEsquivel42/SEBC/blob/master/installation/labs/ntpd.PNG)  
   
 <code>systemctl status firewalld.service</code>  
 <code>systemctl stop firewalld.service</code>  
@@ -64,6 +66,8 @@ echo never > /sys/kernel/mm/transparent_hugepage/enabled
 <code>sysctl -p</code>  
   
 <code>cat /etc/sysconfig/network-scripts/ifcfg-eth0</code>  
+  
+![eth0](https://github.com/AlanEsquivel42/SEBC/blob/master/installation/labs/eth0.PNG)  
   
 <code>nslookup ip-172-31-9-209.ec2.internal</code>  
 <code>dig -x 172.31.0.2</code>  
