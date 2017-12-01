@@ -1,9 +1,12 @@
+```
 Provider: AWS  
-  
+```
+```
 172.31.60.72	ip-172-31-60-72.ec2.internal
 172.31.60.235	ip-172-31-60-235.ec2.internal
 172.31.62.160	ip-172-31-62-160.ec2.internal
 172.31.57.117	ip-172-31-57-117.ec2.internal
+```
 
 <code>[root@ip-172-31-60-72 ec2-user]# cat /etc/redhat-release</code>  
 <code>Red Hat Enterprise Linux Server release 7.4 (Maipo)</code>  
