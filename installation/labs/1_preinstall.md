@@ -1,6 +1,5 @@
-**Prerrequisitos de instalación**
-  
-<code>sudo lsblk</code></code>  
+**Prerrequisitos de instalaciÃ³n**
+    
 <code>sudo parted /dev/xvdb mklabel gpt</code>  
 <code>sudo parted /dev/xvdc mklabel gpt</code>  
 <code>sudo parted -a opt /dev/xvdb mkpart primary ext4 0% 100%</code>  
@@ -20,9 +19,13 @@
 <code>sudo mount -o defaults /dev/xvdc1 /data01</code>  
 <code>sudo lsblk</code>  
   
+![fstab](https://github.com/AlanEsquivel42/SEBC/blob/master/installation/labs/lsblk.PNG)    
+  
 <code>sudo su</code>  
 <code>echo "vm.swappiness = 1" >> /etc/sysctl.conf</code>  
 <code>echo 1 > /proc/sys/vm/swappiness</code>  
+  
+![swap](https://github.com/AlanEsquivel42/SEBC/blob/master/installation/labs/swap.PNG)  
   
 <code>yum install y ntp</code>  
 <code>systemctl enable ntpd</code>  
@@ -35,7 +38,7 @@
 <code>selinuxenabled || echo "disabled"</code>  
 <code>reboot</code>  
 <code>sestatus</code>  
-
+  
 ![sestatus](https://github.com/AlanEsquivel42/SEBC/blob/master/installation/labs/sestatus.PNG)  
   
 <code>vi /etc/rc.local  
@@ -60,4 +63,9 @@ echo never > /sys/kernel/mm/transparent_hugepage/enabled
   
 <code>sysctl -p</code>  
   
+<code>cat /etc/sysconfig/network-scripts/ifcfg-eth0</code>  
   
+<code>nslookup ip-172-31-9-209.ec2.internal</code>  
+<code>dig -x 172.31.0.2</code>  
+  
+ ![nslookup](https://github.com/AlanEsquivel42/SEBC/blob/master/installation/labs/nslookup.PNG)
