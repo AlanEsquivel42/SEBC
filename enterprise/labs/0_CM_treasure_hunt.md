@@ -14,16 +14,23 @@ If the job is small, the application master may choose to run them in the same J
 Sentry  
 Hue  
 Hive  
+HDFS  
+Impala  
+Solr  
+Kafka  
   
-How do you upgrade the CM agents?  
+**How do you upgrade the CM agents?**  
 1. Log in to the Cloudera Manager Admin Console.  
   
 2. Upgrade hosts using one of the following methods:  
    + Cloudera Manager installs Agent software  
-     - Select Yes, I would like to upgrade the Cloudera Manager Agent packages now and click Continue.  
-     - Select the release of the Cloudera Manager Agent to install. Normally, this is the Matched Release for this Cloudera Manager Server. However, if you used a custom repository (instead of archive.cloudera.com) for the Cloudera Manager server, select Custom Repository and provide the required information. The custom repository allows you to use an alternative location, but that location must contain the matched Agent version.  
+      - Select Yes, I would like to upgrade the Cloudera Manager Agent packages now and click Continue.  
+      - Select the release of the Cloudera Manager Agent to install. Normally, this is the Matched Release for this Cloudera Manager    
+      Server. However, if you used a custom repository (instead of archive.cloudera.com) for the Cloudera Manager server, select Custom 
+      Repository and provide the required information. The custom repository allows you to use an alternative location, but that 
+      location must contain the matched Agent version.  
      - Click Continue. The JDK Installation Options page displays.  
-Leave Install Oracle Java SE Development Kit (JDK) checked to allow Cloudera Manager to install the JDK on each cluster host, or uncheck if you plan to install it yourself.
+      Leave Install Oracle Java SE Development Kit (JDK) checked to allow Cloudera Manager to install the JDK on each cluster host, or uncheck if you plan to install it yourself.
 If local laws permit you to deploy unlimited strength encryption, and you are running a secure cluster, check the Install Java Unlimited Strength Encryption Policy Files checkbox.
 Click Continue.
 Specify credentials and initiate Agent installation:
