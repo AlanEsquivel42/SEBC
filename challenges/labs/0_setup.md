@@ -45,4 +45,15 @@ rhui-REGION-rhel-server-releases/7Server/x86_64         Red Hat Enterprise Linux
 rhui-REGION-rhel-server-rh-common/7Server/x86_64        Red Hat Enterprise Linux Server 7 RH Common (RPMs)                        228
 repolist: 17,757
 ```
+```
+[root@ip-172-31-60-72 ec2-user]# cat /etc/passwd | grep haley
+haley:x:2900:1001::/home/haley:/bin/bash
+[root@ip-172-31-60-72 ec2-user]# cat /etc/passwd | grep saturn
+saturn:x:2800:1002::/home/saturn:/bin/bash
+[root@ip-172-31-60-72 ec2-user]#
+[root@ip-172-31-60-72 ec2-user]# cat /etc/group | grep comets
+comets:x:1001:
+[root@ip-172-31-60-72 ec2-user]# cat /etc/group | grep planets
+planets:x:1002:
 
+```
