@@ -1,3 +1,4 @@
+```
 MariaDB [(none)]> select @@hostname;
 +------------------------------+
 | @@hostname                   |
@@ -28,3 +29,4 @@ MariaDB [(none)]> show databases;
 | scm                |
 +--------------------+
 8 rows in set (0.00 sec)
+```
