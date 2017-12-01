@@ -63,7 +63,7 @@ Kafka
   
   *Server
   
-  # vim /var/kerberos/krb5kdc/kdc.conf
+  <code># vim /var/kerberos/krb5kdc/kdc.conf</code>
   ```
 [kdcdefaults]
  kdc_ports = 88
@@ -83,7 +83,7 @@ Kafka
  
  *All Clients
  
-  # vim /etc/krb5.conf
+  <code># vim /etc/krb5.conf</code>
  ```
  
 [logging]
@@ -115,7 +115,7 @@ Kafka
    
    *Create the database using the kdb5_util utility. (Server)
    
-   # /usr/sbin/kdb5_util create -s
+   <code># /usr/sbin/kdb5_util create -s</code>
    ``` 
    Loading random data
    Initializing database '/var/kerberos/krb5kdc/principal' for realm 'ALANESQUIVEL.COM',
@@ -148,8 +148,8 @@ Kafka
    
    *Adds the password policy to the database.  
    
+   <code># kadmin.local</code>
    ```
-   # kadmin.local
     kadmin.local:  addpol admin
     kadmin.local:  addpol users
     kadmin.local:  addpol hosts
@@ -158,6 +158,7 @@ Kafka
    
    *Start Kerberos using the following commands:  
    
-   <code>#service krb5kdc start</code>
-   <code>#service kadmin start</code>
+   <code>#service krb5kdc start</code>  
+   <code>#service kadmin start</code>  
+   
    
